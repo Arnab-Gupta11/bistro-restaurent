@@ -2,8 +2,14 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        cinzel: "'Cinzel', serif",
+        inter: "'Inter', sans-serif",
+      },
+    },
   },
+
   plugins: [require("daisyui")],
   daisyui: {
     themes: ["emerald"],
