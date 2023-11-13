@@ -1,4 +1,4 @@
-import logo from "../assets/logo.png";
+import logo from "../../assets/logo.png";
 const NavbarTitle = () => {
   return (
     <div className="flex items-center gap-2">

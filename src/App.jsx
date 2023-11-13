@@ -4,7 +4,7 @@ import MainLayout from "./layout/MainLayout";
 function App() {
   return (
     <>
-      <div className="max-w-screen-xl mx-auto">
+      <div className="">
         <MainLayout>
           <Outlet></Outlet>
         </MainLayout>

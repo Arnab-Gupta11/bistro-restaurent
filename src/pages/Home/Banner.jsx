@@ -9,7 +9,7 @@ import img6 from "../../assets/home/06.png";
 
 const Banner = () => {
   return (
-    <div>
+    <div className="max-w-full">
       <Carousel autoPlay={true} infiniteLoop={true} className="text-center">
         <div>
           <img src={img1} />
