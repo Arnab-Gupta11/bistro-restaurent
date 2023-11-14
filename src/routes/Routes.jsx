@@ -1,11 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Home from "../pages/Home/Home";
-import Login from "../pages/Login";
+// import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Contact from "../pages/Contact";
 import Shop from "../pages/Shop/Shop";
 import Menu from "../pages/Menu/Menu";
+import Login from "../pages/Login";
 const router = createBrowserRouter([
   {
     path: "/",

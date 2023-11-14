@@ -1,7 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import NavbarTitle from "./NavbarTitle";
+import useAuth from "../../hooks/useAuth";
 
 const Navbar = () => {
+  const { logutUser, user } = useAuth();
+  const handleDelete = () => {
+    logutUser()
+      .then(() => {})
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
   return (
     <div className="w-full  bg-opacity-60 fixed bg-black z-10 text-white">
       <div className=" max-w-screen-xl navbar  mx-auto flex justify-between items-center py-6">
@@ -48,7 +57,15 @@ const Navbar = () => {
             >
               Our Shop
             </NavLink>
-            <button className="text-white uppercase font-bold hover:bg-yellow-300 hover:px-4 hover:py-2 hover:rounded-md ">Sign Out</button>
+            {user ? (
+              <button className="text-white uppercase font-bold hover:bg-yellow-300 hover:px-4 hover:py-2 hover:rounded-md " onClick={handleDelete}>
+                Logout
+              </button>
+            ) : (
+              <Link to={"/login"}>
+                <button className="text-white uppercase font-bold hover:bg-yellow-300 hover:px-4 hover:py-2 hover:rounded-md ">Login</button>
+              </Link>
+            )}
           </ul>
         </div>
       </div>
