@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import NavbarTitle from "./NavbarTitle";
 import useAuth from "../../hooks/useAuth";
-
+import { FaShoppingCart } from "react-icons/fa";
 const Navbar = () => {
   const { logutUser, user } = useAuth();
   const handleDelete = () => {
@@ -56,6 +56,12 @@ const Navbar = () => {
               className={({ isActive }) => (isActive ? "text-yellow-300 uppercase font-bold" : "text-white uppercase font-bold")}
             >
               Our Shop
+            </NavLink>
+            <NavLink to="/">
+              <button className="flex items-center gap-1">
+                <FaShoppingCart className="text-yellow-300"></FaShoppingCart>
+                <div className="badge badge-secondary bg-pink-700">+0</div>
+              </button>
             </NavLink>
             {user ? (
               <button className="text-white uppercase font-bold hover:bg-yellow-300 hover:px-4 hover:py-2 hover:rounded-md " onClick={handleDelete}>
